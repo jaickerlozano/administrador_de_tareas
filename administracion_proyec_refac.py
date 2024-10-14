@@ -73,9 +73,18 @@ gestionamiento = GestionamientoTareas()
 mostrarLista = MostrarListaTareas()
 tarea1 = GestorTarea(gestionamiento, mostrarLista)
 tarea2 = GestorTarea(gestionamiento, mostrarLista)
+tarea3 = GestorTarea(gestionamiento, mostrarLista)
 
-# Usamos los métodos
+# Usamos un método para agregar personal
 tarea1.agregar_tarea('cotizar', 'Jaicker', 'solicitar precios ssd')
 tarea2.agregar_tarea('contrataciones', 'Elyna', 'contratar personal')
+tarea3.agregar_tarea('personal', 'Adela', 'supervisar personal')
 tarea1.imprimir_lista_tareas()
 
+# Usamos un método para cambiar al responsable de alguna tarea
+tarea3.cambiar_responsable_tarea('personal', 'Elyana')
+tarea3.imprimir_lista_tareas()
+
+# Usamos un método para actualizar la descripción de alguna tarea
+tarea2.actualizar_descripcion_tarea('contrataciones', 'contratar personal y gestionar su documentacion interna')
+tarea2.imprimir_lista_tareas()
