@@ -41,7 +41,11 @@ class GestionamientoTareas(GestionadorTareas):
 # Implementacion para imprimir lista de tareas
 class MostrarListaTareas(MostradorTareas):
     def imprimir_lista_tareas(self, lista_tareas):
-        print(f"La lista de tareas es: {lista_tareas}")
+        for tarea, detalle in lista_tareas.items():
+            print("Tarea: " + tarea)
+            print("descripcion:", detalle["descripcion"])
+            print("responsable: " + detalle["responsable"] + "\n")
+            #print(f"La lista de tareas es: {lista_tareas}")
 
 # Gestor principal que coordina la gestión y la impresión de tareas
 class GestorTarea:
@@ -68,7 +72,10 @@ class GestorTarea:
 gestionamiento = GestionamientoTareas()
 mostrarLista = MostrarListaTareas()
 tarea1 = GestorTarea(gestionamiento, mostrarLista)
+tarea2 = GestorTarea(gestionamiento, mostrarLista)
 
 # Usamos los métodos
 tarea1.agregar_tarea('cotizar', 'Jaicker', 'solicitar precios ssd')
+tarea2.agregar_tarea('contrataciones', 'Elyna', 'contratar personal')
 tarea1.imprimir_lista_tareas()
+
